@@ -1,37 +1,73 @@
 # kotak pajangan
 
-![Screenshot](./screenshot.png)
+![behold le screenshot](./screenshot.png)
 
-a box (container) that open a browser and then livestream it via RTMP.
+a magical box that opens browser and screams its pixels at rtmp streams. perfect for when you need to violently share cat videos at 2am.
 
-what it lets you do:
-- live stream what's available on the web to destination stream via rtmp
+**what it do**:
+- yeet web content into rtmp streams (like twitch/youtube)
+- make your cpu cry in 4k software rendering
 
-what it doesn't let you do:
-- control it (but you could manually install `wayvnc` and remote it here)
+**what it no do**:
+- let you control it (but u can `wayvnc` inside if u rly need to touchy)
 
-**notable notice**:
-- it works without DRI involved
-- but that also means that your CPU will scream **hard** because **everything is software rendered**
+⚠️ **warning le cpu**:
+- no graphics go brr (DRI-less)
+- your processor will sound like jet engine
+- everything rendered in slow-mo software (rip frames)
 
-## getting it to work
+## make it go brrr
 
-you will need to have either [docker](https://docker.com) or [podman](https://podman.io) installed in your system
+u need [docker](https://docker.com) or [podman](https://podman.io). choose your weapon.
 
-if you prefer building manually, then build the image by running the following command if you use:
-- docker: `docker build -f Containerfile -t kotak`
-- podman: `podman build -f Containerfile -t kotak`
+### build it (if u fancy)
+```bash
+# docker style
+docker build -f Containerfile -t kotak .
 
-or if you prefer to download a prebuild one...
-- docker: `docker pull ghcr.io/yonle/kotak_pajangan:master`
-- podman: `podman pull ghcr.io/yonle/kotak_pajangan:master`
+# podman style
+podman build -f Containerfile -t kotak .
 
-now just create le container.
-- docker: `docker create --privileged --name pajangan -e STREAM=rtmps://live.example.com/abcdef123456 -e WEB=https://webglsamples.org/aquarium/aquarium.html kotak`
-- podman: `podman create --privileged --name pajangan -e STREAM=rtmps://live.example.com/abcdef123456 -e WEB=https://webglsamples.org/aquarium/aquarium.html kotak`
+### or steal prebuilt (lazy gang)
+```bash
+docker pull ghcr.io/yonle/kotak_pajangan:master
+# or
+podman pull ghcr.io/yonle/kotak_pajangan:master
+```
 
-**IMPORTANT**: If you pull from `ghcr.io/yonle/kotak_pajangan:master`, You must replace `kotak` with `ghcr.io/yonle/kotak_pajangan:master`
+### make le container
+replace secrets:
+- `STREAM`: your rtmp sink (like `rtmps://live.twitch.tv/app/ur_key`)
+- `WEB`: thing to stream (try `https://pointerpointer.com` for funsies)
 
-finally, start it.
-- docker: `docker start pajangan`
-- podman: `podman start pajangan`
+```bash
+# docker magic
+docker create --privileged --name pajangan \
+  -e STREAM=rtmps://live.example.com/ur_key \
+  -e WEB=https://webglsamples.org/aquarium/aquarium.html \
+  kotak  # or ghcr.io/yonle/kotak_pajangan:master if stolen
+
+# podman wizardry
+podman create --privileged --name pajangan \
+  -e STREAM=rtmps://live.example.com/ur_key \
+  -e WEB=https://webglsamples.org/aquarium/aquarium.html \
+  ghcr.io/yonle/kotak_pajangan:master
+```
+
+### FIRE IN THE HOLE
+```bash
+docker start pajangan  # or
+podman start pajangan
+```
+
+now watch cpu temp go 📈 while browser screams at rtmp. perfect.
+
+> pro tip: if stream no work, check if:
+> - url actually load (test in real browser)
+> - rtmp key not expired
+> - your cpu not actually on fire 🔥
+
+---
+
+made when bored at 3am. may contain traces of sleep deprivation.
+stream responsibly (or don't, idc).
