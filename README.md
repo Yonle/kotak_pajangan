@@ -2,7 +2,7 @@
 
 ![Screenshot](./screenshot.png)
 
-a box (container) that open a browser and livestream it via RTMP.
+a box (container) that open a browser and then livestream it via RTMP.
 
 what it lets you do:
 - live stream what's available on the web to destination stream via rtmp
