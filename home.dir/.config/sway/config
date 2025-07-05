@@ -1,0 +1,4 @@
+output HEADLESS-1 resolution 1920x1080
+
+exec --no-startup-id bash ~/stream.sh
+exec --no-startup-id bash ~/kiosk.sh
