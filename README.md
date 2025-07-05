@@ -27,10 +27,10 @@ or if you prefer to download a prebuild one...
 - podman: `podman pull ghcr.io/yonle/kotak_pajangan:master`
 
 now just create le container.
-- docker: `docker create --name pajangan -e STREAM=rtmps://live.example.com/abcdef123456 -e WEB=https://webglsamples.org/aquarium/aquarium.html kotak`
-- podman: `podman create --name pajangan -e STREAM=rtmps://live.example.com/abcdef123456 -e WEB=https://webglsamples.org/aquarium/aquarium.html kotak`
+- docker: `docker create --privileged --name pajangan -e STREAM=rtmps://live.example.com/abcdef123456 -e WEB=https://webglsamples.org/aquarium/aquarium.html kotak`
+- podman: `podman create --privileged --name pajangan -e STREAM=rtmps://live.example.com/abcdef123456 -e WEB=https://webglsamples.org/aquarium/aquarium.html kotak`
 
-**IMPORTANT**: If you pull from `ghcr.io/yonle/kotak_pajangan`, You must replace `kotak` with `ghcr.io/yonle/kotak_pajangan`
+**IMPORTANT**: If you pull from `ghcr.io/yonle/kotak_pajangan:master`, You must replace `kotak` with `ghcr.io/yonle/kotak_pajangan:master`
 
 finally, start it.
 - docker: `docker start pajangan`
