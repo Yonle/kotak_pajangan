@@ -6,6 +6,7 @@ a magical box that opens browser and screams its pixels at rtmp streams. perfect
 
 **what it do**:
 - yeet web content into rtmp streams (like twitch/youtube)
+- autoplay what's on the web content
 - make your cpu cry in 4k software rendering
 
 **what it no do**:
