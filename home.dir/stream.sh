@@ -1,13 +1,10 @@
 
-# stream=rtmps://example.com/.../private-key
-stream=
-
 while true; do
 wf-recorder \
         --no-damage \
         --no-dmabuf \
         -o HEADLESS-1 \
-        -f $stream \
+        -f $STREAM \
         -m flv \
         -a@DEFAULT_MONITOR@ \
         -c libx264 \

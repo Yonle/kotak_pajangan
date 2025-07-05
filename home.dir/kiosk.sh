@@ -3,9 +3,6 @@ export LIBGL_ALWAYS_SOFTWARE=1
 export GALLIUM_DRIVER=llvmpipe
 export VK_ICD_FILENAMES="/usr/share/vulkan/icd.d/lvp_icd.x86_64.json:/usr/share/vulkan/icd.d/swiftshader_icd.x86_64.json"
 
-# addr=https://webglsamples.org/aquarium/aquarium.html
-addr=
-
 chromium \
   --no-sandbox \
   --ozone-platform=wayland \
@@ -42,4 +39,4 @@ chromium \
   --renderer-process-limit=1 \
   --in-process-gpu \
   --single-process \
-  --kiosk $addr
+  --kiosk $WEB
