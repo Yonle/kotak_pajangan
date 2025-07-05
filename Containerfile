@@ -1,8 +1,8 @@
 FROM alpine:3.22
 
 RUN apk add --no-cache \
-    tini sway chromium pipewire pipewire-pulse pipewire-alsa wireplumber \
-    openrc bash dbus fontconfig font-dejavu font-liberation ffmpeg wf-recorder \
+    tini sway chromium pipewire pipewire-pulse pipewire-alsa wireplumber openrc bash dbus ffmpeg wf-recorder \
+    fontconfig font-dejavu font-liberation font-jetbrains-mono font-wqy-zenhei font-noto-emoji \
     mesa-egl mesa-gles mesa-gbm mesa-vulkan-swrast vulkan-loader vulkan-tools
 
 RUN adduser -D -s /bin/bash a
