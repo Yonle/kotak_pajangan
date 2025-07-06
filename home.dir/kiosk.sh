@@ -14,8 +14,6 @@ chromium \
   --enable-features=Vulkan \
   --ignore-gpu-blocklist \
   --enable-unsafe-webgpu \
-  --disable-gpu-compositing \
-  --disable-software-rasterizer \
   --enable-webgl \
   --enable-webgl2 \
   --autoplay-policy=no-user-gesture-required \
@@ -36,7 +34,4 @@ chromium \
   --disable-backing-store-limit \
   --noerrdialogs \
   --deny-permission-prompts \
-  --renderer-process-limit=1 \
-  --in-process-gpu \
-  --single-process \
   --kiosk $WEB
