@@ -1,4 +1,4 @@
-FROM alpine:3.22
+FROM docker.io/alpine:3.22
 
 RUN apk add --no-cache \
     tini sway chromium pipewire pipewire-pulse pipewire-alsa wireplumber openrc bash dbus ffmpeg wf-recorder \
