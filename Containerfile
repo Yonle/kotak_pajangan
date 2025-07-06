@@ -1,5 +1,9 @@
 FROM docker.io/alpine:3.22
 
+LABEL org.opencontainers.image.source="https://github.com/Yonle/kotak_pajangan" \
+      org.opencontainers.image.description="a magical box that opens browser and screams its pixels at rtmp streams." \
+      org.opencontainers.image.licenses="MIT"
+
 RUN apk add --no-cache \
     tini sway chromium pipewire pipewire-pulse pipewire-alsa wireplumber openrc bash dbus ffmpeg wf-recorder \
     fontconfig font-dejavu font-liberation font-jetbrains-mono font-wqy-zenhei font-noto-emoji \
