@@ -1,4 +1,6 @@
-output HEADLESS-1 resolution 1920x1080
+output HEADLESS-1 mode 1920x1080@30Hz
+
+for_window [all] fullscreen enable
 
 exec --no-startup-id bash ~/stream.sh
 exec --no-startup-id bash ~/kiosk.sh
