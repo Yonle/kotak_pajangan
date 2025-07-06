@@ -1,12 +1,30 @@
-
 export LIBGL_ALWAYS_SOFTWARE=1
 export GALLIUM_DRIVER=llvmpipe
 
-export MOZ_DISABLE_SHM=1
-export MOZ_ENABLE_WAYLAND=0
-
-firefox \
-  --profile /home/a/.firefox_profile \
-  --no-remote \
-  --new-instance \
+chromium \
+  --disable-dev-shm-usage \
+  --use-gl=swiftshader \
+  --ignore-gpu-blocklist \
+  --enable-unsafe-webgpu \
+  --enable-webgl \
+  --enable-webgl2 \
+  --autoplay-policy=no-user-gesture-required \
+  --disable-translate \
+  --disable-features=TranslateUI \
+  --disable-sync \
+  --disable-background-networking \
+  --disable-background-timer-throttling \
+  --disable-default-apps \
+  --disable-component-update \
+  --disable-domain-reliability \
+  --disable-infobars \
+  --disable-session-crashed-bubble \
+  --disable-notifications \
+  --disable-breakpad \
+  --disable-logging \
+  --disable-hang-monitor \
+  --disable-backing-store-limit \
+  --noerrdialogs \
+  --deny-permission-prompts \
+  --enable-features=OverlayScrollbar \
   --kiosk "$WEB"
