@@ -37,6 +37,7 @@ docker build -f Containerfile -t kotak .
 
 # podman style
 podman build -f Containerfile -t kotak .
+```
 
 ### or steal prebuilt (lazy gang)
 ```bash
