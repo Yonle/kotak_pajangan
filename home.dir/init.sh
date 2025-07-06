@@ -15,10 +15,9 @@ fi
 
 openrc --user gui
 
-export WLR_BACKENDS=headless
-export WLR_NO_HARDWARE_CURSORS=1
-export WLR_LIBINPUT_NO_DEVICES=1
-export WLR_CURSOR_HIDE_WHEN_UNFOCUSED=1
-export WLR_RENDERER=pixman
+Xvfb :0 -screen 0 1920x1080x24 -nolisten tcp -ac &
 
-dbus-run-session sway
+sleep 1
+
+export DISPLAY=:0
+dbus-run-session i3

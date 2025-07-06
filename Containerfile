@@ -5,9 +5,9 @@ LABEL org.opencontainers.image.source="https://github.com/Yonle/kotak_pajangan" 
       org.opencontainers.image.licenses="MIT"
 
 RUN apk add --no-cache \
-    tini sway chromium pipewire pipewire-pulse pipewire-alsa wireplumber openrc bash dbus ffmpeg wf-recorder \
+    tini i3wm firefox pipewire pipewire-pulse pipewire-alsa wireplumber openrc bash dbus ffmpeg xvfb \
     fontconfig font-dejavu font-liberation font-jetbrains-mono font-wqy-zenhei font-noto-emoji \
-    mesa-egl mesa-gles mesa-gbm mesa-vulkan-swrast vulkan-loader vulkan-tools
+    mesa mesa-gl mesa-egl mesa-gles mesa-dri-gallium mesa-gbm
 
 RUN adduser -D -s /bin/bash a
 
@@ -18,6 +18,8 @@ RUN chown -R a:a /home/a
 RUN mkdir -p /run/openrc /tmp && \
     touch /run/openrc/softlevel && \
     rc-update add dbus default
+
+RUN mkdir -m 1777 /tmp/.X11-unix
 
 ENTRYPOINT ["/sbin/tini", "--"]
 

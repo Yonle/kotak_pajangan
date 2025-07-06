@@ -53,13 +53,13 @@ replace secrets:
 
 ```bash
 # docker magic
-docker create --privileged --name pajangan \
+docker create --name pajangan \
   -e STREAM=rtmps://live.example.com/ur_key \
   -e WEB=https://webglsamples.org/aquarium/aquarium.html \
   kotak  # or ghcr.io/yonle/kotak_pajangan:master if stolen
 
 # podman wizardry
-podman create --privileged --name pajangan \
+podman create --name pajangan \
   -e STREAM=rtmps://live.example.com/ur_key \
   -e WEB=https://webglsamples.org/aquarium/aquarium.html \
   ghcr.io/yonle/kotak_pajangan:master
