@@ -1,22 +1,18 @@
 
 while true; do
 wf-recorder \
-        --no-damage \
-        --no-dmabuf \
-        -o HEADLESS-1 \
-        -f $STREAM \
-        -m flv \
-        -a@DEFAULT_MONITOR@ \
-        -c libx264 \
-        -F format=yuv420p \
-        -p color_range=1 \
-        -r 30 \
-        -p minrate=2000k \
-        -p maxrate=2000k \
-        -p bufsize=2000k \
-        -B 2000k \
-        -p x264_params=nal_hrd=cbr:force-cfr=1 \
-        -p preset=veryfast \
-        -C aac \
-        -P bitrate=128k
+  -o HEADLESS-1 \
+  -f $STREAM \
+  -m flv \
+  -a @DEFAULT_MONITOR@ \
+  -c libx264 \
+  -p pix_fmt=yuv420p \
+  -r 30 \
+  -p g=60 \
+  -b:v 6000k \
+  -p bufsize=12000k \
+  -p preset=veryfast \
+  -p x264_params="nal-hrd=cbr" \
+  -C aac \
+  -P bitrate=128k
 done
