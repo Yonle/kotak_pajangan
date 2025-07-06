@@ -4,7 +4,6 @@ export GALLIUM_DRIVER=llvmpipe
 export VK_ICD_FILENAMES="/usr/share/vulkan/icd.d/lvp_icd.x86_64.json:/usr/share/vulkan/icd.d/swiftshader_icd.x86_64.json"
 
 chromium \
-  --no-sandbox \
   --ozone-platform=wayland \
   --ozone-platform-hint=auto \
   --enable-features=UseOzonePlatform \
@@ -34,4 +33,5 @@ chromium \
   --disable-backing-store-limit \
   --noerrdialogs \
   --deny-permission-prompts \
+  --enable-features=OverlayScrollbar \
   --kiosk $WEB
