@@ -17,6 +17,15 @@ a magical box that opens browser and screams its pixels at rtmp streams. perfect
 - your processor will sound like jet engine
 - everything rendered in slow-mo software (rip frames)
 
+## requirement
+minimum:
+- ram: 4 GB
+- cpu: 4 cores
+
+recommended:
+- ram: 4 GB
+- cpu: **8 cores**
+
 ## make it go brrr
 
 u need [docker](https://docker.com) or [podman](https://podman.io). choose your weapon.
