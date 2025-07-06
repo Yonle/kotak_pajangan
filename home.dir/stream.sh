@@ -2,7 +2,7 @@
 while true; do
 ffmpeg \
   -thread_queue_size 512 \
-  -f x11grab -draw_mouse 0 -framerate 30 -video_size 1920x1080 -i :0 \
+  -f x11grab -draw_mouse 0 -framerate 30 -video_size 1920x1080 -i $DISPLAY \
   -f pulse -thread_queue_size 512 -i default \
   -c:v libx264 \
   -pix_fmt yuv420p \

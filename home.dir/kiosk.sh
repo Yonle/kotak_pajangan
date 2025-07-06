@@ -2,6 +2,7 @@ export LIBGL_ALWAYS_SOFTWARE=1
 export GALLIUM_DRIVER=llvmpipe
 
 chromium \
+  --no-sandbox \
   --disable-dev-shm-usage \
   --use-gl=swiftshader \
   --ignore-gpu-blocklist \

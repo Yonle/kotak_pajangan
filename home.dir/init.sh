@@ -17,9 +17,4 @@ openrc --user gui
 
 rm /tmp/.X0-lock
 
-Xvfb :0 -screen 0 1920x1080x24 -nolisten tcp -ac &
-
-sleep 1
-
-export DISPLAY=:0
-dbus-run-session i3
+xvfb-run -n 0 -s "-screen 0 1920x1080x24" dbus-run-session i3
