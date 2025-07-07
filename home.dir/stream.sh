@@ -15,7 +15,7 @@ ffmpeg \
   -preset superfast -tune zerolatency \
   -c:a aac \
   -b:a 128k \
-  -filter:a aresample=async=1 \
   -f flv \
+  -copyts \
   "$STREAM"
 done
