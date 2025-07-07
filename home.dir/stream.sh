@@ -14,7 +14,8 @@ ffmpeg \
   -x264-params "nal_hrd=cbr:force-cfr=1:keyint=60:min-keyint=60:scenecut=0" \
   -preset superfast -tune zerolatency \
   -c:a aac \
-  -b:a 128k \
+  -b:a 128k -strict -2 \
+  -af aresample=async=1 \
   -f flv \
   -copyts \
   "$STREAM"
