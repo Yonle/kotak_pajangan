@@ -9,8 +9,8 @@ ffmpeg \
   -color_range 1 \
   -r 30 \
   -g 60 \
-  -minrate 6000k -maxrate 6000k -b:v 6000k \
-  -bufsize 12000k \
+  -minrate 3000k -maxrate 3000k -b:v 3000k \
+  -bufsize 6000k \
   -x264-params "nal_hrd=cbr:force-cfr=1:keyint=60:min-keyint=60:scenecut=0" \
   -preset superfast -tune zerolatency \
   -c:a aac \
