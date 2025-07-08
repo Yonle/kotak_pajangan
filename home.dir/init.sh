@@ -15,6 +15,6 @@ fi
 
 openrc --user gui
 
-rm /tmp/.X0-lock
+rm -f /tmp/.X0-lock
 
 xvfb-run -n 0 -s "-screen 0 1920x1080x24" dbus-run-session i3
