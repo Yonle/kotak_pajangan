@@ -10,7 +10,7 @@ a magical box that opens browser and screams its pixels at rtmp streams. perfect
 - make your cpu cry in 4k software rendering
 
 **what it no do**:
-- let you control it (but u can `wayvnc` inside if u rly need to touchy)
+- let you control it (but u can `x11vnc` inside if u rly need to touchy)
 
 ⚠️ **warning le cpu**:
 - no graphics go brr (DRI-less)
