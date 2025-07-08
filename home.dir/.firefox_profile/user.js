@@ -42,6 +42,8 @@ user_pref("permissions.default.xr", 2);          // WebXR (VR/AR)
 user_pref("permissions.default.midi", 2);
 user_pref("permissions.default.storage", 2);     // Persistent storage
 
-// Sandbox exceptions (if needed)
+// Sandbox exceptions
 user_pref("security.sandbox.content.level", 0);
 user_pref("security.sandbox.gpu.level", 0);
+user_pref("security.sandbox.plugin.level", 0);
+user_pref("security.sandbox.content.force-disable", true);
