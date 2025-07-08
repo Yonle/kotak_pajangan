@@ -5,7 +5,7 @@ LABEL org.opencontainers.image.source="https://github.com/Yonle/kotak_pajangan" 
       org.opencontainers.image.licenses="MIT"
 
 RUN apk add --no-cache \
-    tini i3wm chromium chromium-swiftshader pipewire pipewire-pulse pipewire-alsa wireplumber openrc bash dbus ffmpeg xvfb xvfb-run \
+    tini i3wm firefox pipewire pipewire-pulse pipewire-alsa wireplumber openrc bash dbus ffmpeg xvfb xvfb-run \
     fontconfig font-dejavu font-liberation font-jetbrains-mono font-wqy-zenhei font-noto-emoji \
     mesa mesa-gl mesa-egl mesa-gles mesa-dri-gallium mesa-gbm
 
