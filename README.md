@@ -9,9 +9,6 @@ a magical box that opens browser and screams its pixels at rtmp streams. perfect
 - autoplay what's on the web content (with sound)
 - make your cpu cry in 4k software rendering
 
-**what it no do**:
-- let you control it (but u can `x11vnc` inside if u rly need to touchy)
-
 ⚠️ **warning le cpu**:
 - no graphics go brr (DRI-less)
 - your processor will sound like jet engine
@@ -54,14 +51,33 @@ replace secrets:
 ```bash
 # docker magic
 docker create --name pajangan \
-  -e STREAM=rtmps://live.example.com/ur_key \
-  -e WEB=https://webglsamples.org/aquarium/aquarium.html \
+  -e "STREAM=rtmps://live.example.com/ur_key" \
+  -e "WEB=https://webglsamples.org/aquarium/aquarium.html" \
   kotak  # or ghcr.io/yonle/kotak_pajangan:master if stolen
 
 # podman wizardry
 podman create --name pajangan \
-  -e STREAM=rtmps://live.example.com/ur_key \
-  -e WEB=https://webglsamples.org/aquarium/aquarium.html \
+  -e "STREAM=rtmps://live.example.com/ur_key" \
+  -e "WEB=https://webglsamples.org/aquarium/aquarium.html" \
+  ghcr.io/yonle/kotak_pajangan:master
+```
+
+or if you wanna touchy:
+```
+# docker magic
+docker create --name pajangan \
+  -e "STREAM=rtmps://live.example.com/ur_key" \
+  -e "WEB=https://webglsamples.org/aquarium/aquarium.html" \
+  -e "VNC=1" \
+  -p 5900:5900 \
+  kotak  # or ghcr.io/yonle/kotak_pajangan:master if stolen
+
+# podman wizardry
+podman create --name pajangan \
+  -e "STREAM=rtmps://live.example.com/ur_key" \
+  -e "WEB=https://webglsamples.org/aquarium/aquarium.html" \
+  -e "VNC=1" \
+  -p 5900:5900 \
   ghcr.io/yonle/kotak_pajangan:master
 ```
 
@@ -70,6 +86,8 @@ podman create --name pajangan \
 docker start pajangan  # or
 podman start pajangan
 ```
+
+**note**: if you enabled vnc before, you could connect now to localhost:5900 with your vnc viewer
 
 now watch cpu temp go 📈 while browser screams at rtmp. perfect.
 

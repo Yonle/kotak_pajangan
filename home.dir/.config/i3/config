@@ -1,4 +1,5 @@
 for_window [all] fullscreen enable
 
 exec --no-startup-id bash ~/stream.sh
+exec --no-startup-id bash ~/remote.sh
 exec --no-startup-id bash ~/kiosk.sh
