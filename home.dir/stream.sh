@@ -1,6 +1,8 @@
 
 while true; do
 ffmpeg \
+  -re \
+  -loglevel warning \
   -thread_queue_size 512 \
   -f x11grab -draw_mouse 0 -framerate 30 -video_size 1920x1080 -i $DISPLAY \
   -f pulse -thread_queue_size 512 -i default \
@@ -19,4 +21,7 @@ ffmpeg \
   -f flv \
   -copyts \
   "$STREAM"
+
+echo "Will try reconnecting again in 5 seconds..."
+sleep 5
 done
