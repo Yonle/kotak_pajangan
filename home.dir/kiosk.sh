@@ -3,7 +3,8 @@ export GALLIUM_DRIVER=llvmpipe
 
 chromium \
   --no-sandbox \
-  --use-gl=swiftshader \
+  --use-angle=swiftshader \
+  --use-gl=angle \
   --ignore-gpu-blocklist \
   --enable-unsafe-webgpu \
   --enable-webgl \
