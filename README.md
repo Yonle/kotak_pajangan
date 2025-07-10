@@ -20,7 +20,7 @@ minimum:
 - cpu: 4 cores
 
 recommended:
-- ram: 4 GB
+- ram: **8 GB**
 - cpu: **8 cores**
 
 ## make it go brrr
@@ -51,12 +51,14 @@ replace secrets:
 ```bash
 # docker magic
 docker create --name pajangan \
+  --cpus=4 -m 4g \
   -e "STREAM=rtmps://live.example.com/ur_key" \
   -e "WEB=https://webglsamples.org/aquarium/aquarium.html" \
   kotak  # or ghcr.io/yonle/kotak_pajangan:master if stolen
 
 # podman wizardry
 podman create --name pajangan \
+  --cpus=4 -m 4g \
   -e "STREAM=rtmps://live.example.com/ur_key" \
   -e "WEB=https://webglsamples.org/aquarium/aquarium.html" \
   ghcr.io/yonle/kotak_pajangan:master
@@ -66,6 +68,7 @@ or if you wanna touchy:
 ```
 # docker magic
 docker create --name pajangan \
+  --cpus=4 -m 4g \
   -e "STREAM=rtmps://live.example.com/ur_key" \
   -e "WEB=https://webglsamples.org/aquarium/aquarium.html" \
   -e "VNC=1" \
@@ -74,6 +77,7 @@ docker create --name pajangan \
 
 # podman wizardry
 podman create --name pajangan \
+  --cpus=4 -m 4g \
   -e "STREAM=rtmps://live.example.com/ur_key" \
   -e "WEB=https://webglsamples.org/aquarium/aquarium.html" \
   -e "VNC=1" \
