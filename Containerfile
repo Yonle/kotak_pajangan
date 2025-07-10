@@ -8,7 +8,7 @@ RUN apk add --no-cache \
     bash tini dbus xauth xvfb xvfb-run x11vnc pulseaudio \
     i3wm chromium chromium-swiftshader ffmpeg \
     fontconfig font-dejavu font-liberation font-jetbrains-mono font-wqy-zenhei font-noto-emoji \
-    mesa mesa-gl mesa-egl mesa-gles mesa-dri-gallium mesa-gbm
+    mesa mesa-gl mesa-egl mesa-dri-gallium mesa-gbm mesa-vulkan-swrast vulkan-loader
 
 COPY entrypoint.sh /root/entrypoint.sh
 
