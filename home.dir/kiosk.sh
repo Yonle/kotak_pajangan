@@ -3,6 +3,7 @@ export GALLIUM_DRIVER=llvmpipe
 
 chromium \
   --no-sandbox \
+  --disable-dev-shm-usage \
   --use-angle=swiftshader \
   --use-gl=angle \
   --ignore-gpu-blocklist \
